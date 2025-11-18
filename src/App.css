@@ -1,0 +1,27 @@
+:root{
+  --heading-color: #0b2b4a;
+  --muted: #475569;
+  --accent: #0ea5e9;
+}
+
+.app-heading{
+  text-align: center;
+  margin: 1.25rem auto 0.75rem;
+  color: var(--heading-color);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  max-width: 920px;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px){
+  .app-heading{ font-size: 1.8rem; }
+}
+
+@media (min-width: 1024px){
+  .app-heading{ font-size: 2rem; }
+}
+
+.center-block{ display:flex; justify-content:center; align-items:center; }
