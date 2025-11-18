@@ -1,0 +1,41 @@
+:root {
+  --header-bg-start: #3b82f6;
+  --header-bg-end: #06b6d4;
+  --header-text: #ffffff;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--header-bg-start) 0%,
+    var(--header-bg-end) 100%
+  );
+  color: var(--header-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: inherit;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 640px) {
+  .app-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-title {
+    font-size: 2rem;
+  }
+}

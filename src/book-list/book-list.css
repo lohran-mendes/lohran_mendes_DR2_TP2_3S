@@ -1,0 +1,139 @@
+:root {
+  --table-bg: #ffffff;
+  --table-accent: #0ea5e9;
+  --table-head: #0369a1;
+  --table-border: #e6eef6;
+  --table-row-odd: #f8fbff;
+  --text-color: #0f172a;
+}
+
+.content {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.styled-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background: var(--table-bg);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.styled-table thead th {
+  background: #d7ebff;
+  color: var(--table-head);
+  font-weight: 700;
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  border-right: 1px solid var(--table-border);
+}
+
+.styled-table tbody td {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--table-border);
+  border-right: 1px solid var(--table-border);
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.styled-table thead th:last-child,
+.styled-table tbody td:last-child {
+  border-right: none;
+}
+
+.styled-table tbody tr:nth-child(odd) {
+  background: var(--table-row-odd);
+}
+
+.styled-table tbody tr:hover {
+  background: rgba(14, 165, 233, 0.06);
+}
+
+.btn-delete {
+  padding: 6px 10px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.12s ease, transform 0.08s ease;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.btn-delete:active {
+  transform: translateY(0);
+}
+
+.action-group {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-edit {
+  padding: 6px 10px;
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.12s ease, transform 0.08s ease;
+}
+
+.btn-edit:hover {
+  background: #0891b2;
+  transform: translateY(-1px);
+}
+
+.btn-edit:active {
+  transform: translateY(0);
+}
+
+/* Centralizar botão de ação na célula */
+.styled-table thead th:last-child {
+  text-align: center;
+}
+
+.styled-table tbody td[data-label="Ações"] {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.content > .styled-table {
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  .styled-table thead {
+    display: none;
+  }
+  .styled-table tbody td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .styled-table tbody td:before {
+    content: attr(data-label);
+    font-weight: 700;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 6px;
+    color: var(--table-head);
+  }
+  /* não mostrar o rótulo acima do botão de ações em mobile */
+  .styled-table tbody td[data-label="Ações"]:before {
+    display: none;
+  }
+}
